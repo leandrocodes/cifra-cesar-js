@@ -85,13 +85,13 @@
 							<div id="docs">
 								<h3 class="title is-3">Documentação</h3>
 								<div class="box">
-									<h4 id="const" class="title is-3">método encrypt</h4>
+									<h4 id="const" class="title is-3">Método <span class="has-text-info">encrypt()</span></h4>
 									<article class="message is-primary">
 										<span class="icon has-text-primary">
 											<i class="fab fa-js"></i>
 										</span>
 										<div class="message-body">
-											Block-scoped. Cannot be re-assigned. Not immutable.
+											O método <span class="strong has-text-info">encrypt()</span> é o responsável por pegar a entrada e transformar em um texto cifrado utilizando cifra de césar.
 										</div>
 									</article>
 									<pre><code class="language-javascript"> const encrypt = (text, shift) => { 
@@ -104,18 +104,49 @@
     })
 }
                   </code></pre>
+                  <p>
+                    Esse método recebe como parâmetro uma <em class="has-text-warning">String</em> chamada <strong>text</strong>
+                    e um <em class="has-text-warning">Number</em> chamado <strong>Shift</strong>.
+
+                    A cifra de césar é uma cifra do tipo de <strong>substituição</strong>, ou seja, cada letra do texto a ser criptografado é substituido por outra letra presente no alfabeto com posições à direita ou esquerda.
+                    No exemplo implementado, foi deixado somente a opção de deslocamento à direita.
+                    <br>
+                    <br>
+                    Por exemplo: Queremos criptografar a letra A utilizando duas posições à direita. Logo o resultado será a letra C.
+
+                    <br>
+                    <br>
+                    Aqui, utilizei o método replace, ele retorna uma nova string com algumas ou todas as correspondências de um padrão substituídas por um determinado caractere. O padrão é defenido pela expressão regular, no primeiro parâmetro. O segundo parâmetro é uma função que executa a substituição do caractere.
+                  </p>
 								</div>
 								<div class="box">
-									<h4 id="let" class="title is-3">let</h4>
+									<h4 id="let" class="title is-3">Método <span class="has-text-info">decrypt()</span></h4>
 									<article class="message is-primary">
 										<span class="icon has-text-primary">
-											<i class="fas fa-info-circle"></i>
+											<i class="fab fa-js"></i>
 										</span>
 										<div class="message-body">
-											Block-scoped. Can be re-assigned.
+											O método <strong class="has-text-info">decrypt()</strong> é o responsável pela decifração do texto encriptado.
 										</div>
 									</article>
-									<pre><code class="language-javascript">let i = 0;</code></pre>
+									<pre><code class="language-javascript">
+const decrypt = () => {
+    const text = document.querySelector('#textToDecrypt').value
+    const shift = Number(document.querySelector('#shift').value)
+
+    const unshift = (26 - shift) % 26
+    const result = encrypt(text, unshift)
+
+    document.querySelector('#result').innerText = result
+}
+                  </code></pre>
+                  <p>
+                    A constante <strong class="has-text-info">unshift</strong> pegará quantas casas à direita nos andamos para encriptar e fara o módulo.
+                    <br> <br>
+                    Com isso, se tivermos como parâmetro que devemos utilizar 5 posições a direita, o valor para decriptar seria o mesmo do que a quantidade de posições para ir da posição 5 até a 26 do array de alfabeto. Ou seja, 21 é o número que buscamos para poder decriptar.
+                    <br> <br>
+                    Isto posto, basta chamarmos a mesma função <strong class="has-text-info">encrypt()</strong> passando como parâmetro o texto encriptado e o número de posições que precisamos.
+                  </p>
 								</div>
 							</div>
 							<div id="app">

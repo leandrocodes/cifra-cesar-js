@@ -17,7 +17,7 @@ const decrypt = () => {
 	const shift = Number(document.querySelector('#shift').value)
 
 	const unshift = (26 - shift) % 26
-
+	console.log('unshift', unshift)
 	const result = encrypt(text, unshift)
 
 	document.querySelector('#result').innerText = result
