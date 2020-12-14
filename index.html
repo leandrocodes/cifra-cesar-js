@@ -112,17 +112,86 @@
 							<div id="app">
 								<h3 class="title is-3">Aplicação</h3>
 								<div class="box">
-									<h4 id="lorem" class="title is-4">More to come...</h4>
-									<article class="message is-primary">
-										<span class="icon has-text-primary">
-											<i class="fas fa-info-circle"></i>
-										</span>
-										<div class="message-body">
-											Lorem ipsum dolor sit amet, mea ne viderer veritus
-											menandri, id scaevola gloriatur instructior sit.
+									<div class="field has-addons">
+										<div class="control is-flex">
+                      <div class="is-flex is-align-items-center">
+                        <label for="textToEncrypt">Texto:</label>
+                        <input
+                          class="input is-primary mr-4 ml-2"
+                          type="text"
+                          name="textToEncrypt"
+                          id="textToEncrypt"
+                          required
+                        />
+                      </div>
+
+											<div class="select is-multiple is-primary mr-4">
+                        <div class="is-flex is-align-items-center">
+                          <label for="Shift" class="mr-2">Posições:</label>
+                          <select name="shift" id="shift" required>
+                            <option value="1">1 pos</option>
+                            <option value="2">2 pos</option>
+                            <option value="3">3 pos</option>
+                            <option value="4">4 pos</option>
+                            <option value="5">5 pos</option>
+                            <option value="6">6 pos</option>
+                            <option value="7">7 pos</option>
+                            <option value="8">8 pos</option>
+                            <option value="9">9 pos</option>
+                            <option value="10">10 pos</option>
+                            <option value="11">11 pos</option>
+                            <option value="12">12 pos</option>
+                            <option value="13">13 pos</option>
+                            <option value="14">14 pos</option>
+                            <option value="15">15 pos</option>
+                            <option value="16">16 pos</option>
+                            <option value="17">17 pos</option>
+                            <option value="18">18 pos</option>
+                            <option value="19">19 pos</option>
+                            <option value="20">20 pos</option>
+                            <option value="21">21 pos</option>
+                            <option value="22">22 pos</option>
+                            <option value="23">23 pos</option>
+                            <option value="24">24 pos</option>
+                            <option value="25">25 pos</option>
+                          </select>
+                        </div>
+											</div>
+											<button
+												class="button is-info"
+												onclick="formSubmit()"
+                      >
+                      Shift
+                      <i class="fas fa-random ml-1"></i>
+											</button>
 										</div>
-									</article>
-									<pre><code class="language-javascript">let i = 0;</code></pre>
+									</div>
+
+									<br />
+									<br />
+
+									<div class="field has-addons">
+										<div class="control is-flex">
+                      <label for="textToDecrypt">Cifra:</label>
+											<input
+												class="input is-primary mr-4 ml-2"
+												type="text"
+												name="textToDecrypt"
+												id="textToDecrypt"
+											/>
+											<button
+												class="button is-info mr-4"
+												onclick="decrypt()"
+                      >
+                        Unshift
+                        <i class="fas fa-undo-alt ml-1"></i>
+                      </button> 
+                      <p class="mr-1">Resultado: <div id="result"></div></p>
+
+										</div>
+									</div>
+
+									<script src="./cipher.js"></script>
 								</div>
 							</div>
 						</div>

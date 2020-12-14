@@ -20,7 +20,7 @@ const decrypt = () => {
 
 	const result = encrypt(text, unshift)
 
-	document.querySelector('#result').innerText = 'Result:' + result
+	document.querySelector('#result').innerText = result
 }
 
 const formSubmit = () => {
@@ -29,5 +29,5 @@ const formSubmit = () => {
 
 	const result = encrypt(text, shift)
 	document.querySelector('#textToDecrypt').value = result
-	document.querySelector('#result').innerText = 'Result: '
+	document.querySelector('#result').innerText = ''
 }
