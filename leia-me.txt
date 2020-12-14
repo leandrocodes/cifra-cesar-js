@@ -1,0 +1,6 @@
+Para a execução, basta abrir o arquivo index.html
+
+A explicação do código encontra-se em formato de documentação, também no arquivo index.html.
+
+código fonte disponível também aqui: https://github.com/leandrocodes/cifra-cesar-js
+aplicação rodando também disponível aqui: https://leandrocodes.github.io/cifra-cesar-js/
